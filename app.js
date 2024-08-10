@@ -18,28 +18,30 @@ let runAutoRun  = setTimeout(()=>{
 }, timeAutoNext);;
 
 function showSlider(type){
-    let itemSlider = document.querySelectorAll('.carrosel .list .item')
-    let itemThumbnail = document.querySelectorAll('.carrosel .thumbnail .item')
+let itemSlider = document.querySelectorAll('.carrosel .list .item')
+let itemThumbnail = document.querySelectorAll('.carrosel .thumbnail .item')
 
-    if(type === 'next'){
-        listItemDom.appendChild(itemSlider[0]);
-        thumbnailDom.appendChild(itemThumbnail[0]);
-        carroselDom.classList.add('next');
-    }else{
-        let positionLastItem = itemSlider.length - 1;
-        listItemDom.prepend(itemSlider[positionLastItem]);
-        thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-        carroselDom.classList.add('prev');
-    }
-
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() =>{
-        carroselDom.classList.remove('next');
-        carroselDom.classList.remove('prev');
-    }, timeRunning)
-
-    clearTimeout(runAutoRun);
-    runAutoRun = setTimeout(()=>{
-        nextDom.click();
-    }, timeAutoNext);
+if(type === 'next'){
+    listItemDom.appendChild(itemSlider[0]);
+    thumbnailDom.appendChild(itemThumbnail[0]);
+    carroselDom.classList.add('next');
+}else{
+    let positionLastItem = itemSlider.length - 1;
+    listItemDom.prepend(itemSlider[positionLastItem]);
+    thumbnailDom.prepend(itemThumbnail[positionLastItem]);
+    carroselDom.classList.add('prev');
 }
+
+clearTimeout(runTimeOut);
+runTimeOut = setTimeout(() =>{
+    carroselDom.classList.remove('next');
+    carroselDom.classList.remove('prev');
+}, timeRunning)
+
+clearTimeout(runAutoRun);
+runAutoRun = setTimeout(()=>{
+    nextDom.click();
+}, timeAutoNext);
+}
+
+
