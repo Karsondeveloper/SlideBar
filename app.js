@@ -32,10 +32,10 @@ if(type === 'next'){
     carroselDom.classList.add('prev');
 }
 
-clearTimeout(runTimeOut);
-runTimeOut = setTimeout(() =>{
-    carroselDom.classList.remove('next');
-    carroselDom.classList.remove('prev');
+clearTimeout(runTimeDut); 
+    runTimeDut = setTimeout(() =>{
+        carroselDom.classList.remove('next');
+        carroselDom.classList.remove('prev');
 }, timeRunning);
 
 clearTimeout(runAutoRun);
